@@ -235,21 +235,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Resolvers\ProductListResolver.cs" />
-    <Compile Include="Resolvers\ProductsResolver.cs" />
-    <Compile Include="Startup\Bootstrap.cs" />
-    <Compile Include="Constants\TrackerConstants.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Mapping\ViewModelMappingProfile.cs" />
+    <Compile Include="Models\BaseBlock.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Blog.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Blogpost.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Builder.cs">
-      <Generator>UmbracoModelsBuilder</Generator>
-      <LastGenOutput>Builder.generated.cs</LastGenOutput>
     </Compile>
     <Compile Include="Models\Builder.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
@@ -274,6 +267,9 @@
     <Compile Include="Models\Folder.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\FullWidthText.generated.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Home.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -286,7 +282,6 @@
     <Compile Include="Models\NavigationBase.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\NavItem.cs" />
     <Compile Include="Models\People.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
@@ -299,6 +294,18 @@
     <Compile Include="Models\Products.generated.cs">
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resolvers\BlocksResolver.cs" />
+    <Compile Include="Resolvers\ProductListResolver.cs" />
+    <Compile Include="Resolvers\ProductsResolver.cs" />
+    <Compile Include="Startup\Bootstrap.cs" />
+    <Compile Include="Constants\TrackerConstants.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Mapping\ViewModelMappingProfile.cs" />
+    <Compile Include="Models\Builder.cs">
+      <Generator>UmbracoModelsBuilder</Generator>
+      <LastGenOutput>Builder.generated.cs</LastGenOutput>
+    </Compile>
+    <Compile Include="Models\NavItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resolvers\NavigationResolver.cs" />
     <Compile Include="Resolvers\PagniatedBlogPostsResolver.cs" />
@@ -308,6 +315,7 @@
     <Compile Include="ViewModels\BaseBlogPostPageViewModel.cs" />
     <Compile Include="ViewModels\BaseBlockViewModel.cs" />
     <Compile Include="ViewModels\ContentPageViewModel.cs" />
+    <Compile Include="ViewModels\FullWidthTextViewModel.cs" />
     <Compile Include="ViewModels\InitViewModel.cs" />
     <Compile Include="ViewModels\HomePageViewModel.cs" />
     <Compile Include="ViewModels\ProductPageViewModel.cs" />

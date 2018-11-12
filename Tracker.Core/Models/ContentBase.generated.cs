@@ -24,8 +24,8 @@ namespace Tracker.Core.Models
 	/// <summary>Content Base</summary>
 	public partial interface IContentBase : IPublishedContent
 	{
-		/// <summary>Content</summary>
-		Newtonsoft.Json.Linq.JToken BodyText { get; }
+		/// <summary>Blocks</summary>
+		IEnumerable<IPublishedContent> Blocks { get; }
 
 		/// <summary>Page Title</summary>
 		string PageTitle { get; }
@@ -57,16 +57,16 @@ namespace Tracker.Core.Models
 		}
 
 		///<summary>
-		/// Content
+		/// Blocks
 		///</summary>
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText
+		[ImplementPropertyType("blocks")]
+		public IEnumerable<IPublishedContent> Blocks
 		{
-			get { return GetBodyText(this); }
+			get { return GetBlocks(this); }
 		}
 
-		/// <summary>Static getter for Content</summary>
-		public static Newtonsoft.Json.Linq.JToken GetBodyText(IContentBase that) { return that.GetPropertyValue<Newtonsoft.Json.Linq.JToken>("bodyText"); }
+		/// <summary>Static getter for Blocks</summary>
+		public static IEnumerable<IPublishedContent> GetBlocks(IContentBase that) { return that.GetPropertyValue<IEnumerable<IPublishedContent>>("blocks"); }
 
 		///<summary>
 		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters

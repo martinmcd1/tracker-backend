@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
+using Our.Umbraco.Ditto;
 using Tracker.Core.Models;
 using Tracker.Core.Resolvers;
 using Tracker.Core.ViewModels;
@@ -47,6 +48,24 @@ namespace Tracker.Core.Mapping
                 .ForMember(x => x.Photos, o => o.MapFrom(x => x.Photos.Select(y=>y.Url)));
             Mapper.CreateMap<Product, ProductPageViewModel>()
                 .IncludeBase<Product, BasePageViewModel>();
+
+            // Content blocks
+            Mapper.CreateMap<IPublishedContent, BaseBlockViewModel>()
+                .ForMember(x => x.Type, o => o.MapFrom(x => x.DocumentTypeAlias));
+
+            Mapper.CreateMap<FullWidthText, FullWidthTextViewModel>()
+                .IncludeBase<IPublishedContent, BaseBlockViewModel>();
+
+            Mapper.CreateMap<ContentPage, ContentPageViewModel>()
+                .ForMember(x => x.Blocks, o => o.MapFrom(y=>y.Blocks))
+                .IncludeBase<ContentPage, BasePageViewModel>();
+
+            //Mapper.CreateMap<ImageBlock, ImageBlockViewModel>()
+            //    .IncludeBase<IPublishedContent, BaseBlockViewModel>()
+            //    .ForMember(x => x.Image, o => o.MapFrom(x => x.Image.Url.ToAbsoluteUrl()));
+
+            //Mapper.CreateMap<CodeBlock, ImageBlockViewModel>()
+            //    .IncludeBase<IPublishedContent, CodeBlockViewModel>();
 
         }
     }

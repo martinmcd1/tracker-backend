@@ -55,12 +55,12 @@ namespace Tracker.Core.Models
 		}
 
 		///<summary>
-		/// Content
+		/// Blocks
 		///</summary>
-		[ImplementPropertyType("bodyText")]
-		public Newtonsoft.Json.Linq.JToken BodyText
+		[ImplementPropertyType("blocks")]
+		public IEnumerable<IPublishedContent> Blocks
 		{
-			get { return Tracker.Core.Models.ContentBase.GetBodyText(this); }
+			get { return Tracker.Core.Models.ContentBase.GetBlocks(this); }
 		}
 
 		///<summary>
