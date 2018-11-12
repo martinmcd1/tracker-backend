@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using AutoMapper;
 using Examine;
 using Our.Umbraco.HeadRest.Web.Extensions;
@@ -15,7 +11,7 @@ using Umbraco.Web;
 
 namespace Tracker.Core.Resolvers
 {
- public   class PagniatedBlogPostsResolver : IValueResolver
+    public class PagniatedBlogPostsResolver : IValueResolver
     {
         public ResolutionResult Resolve(ResolutionResult source)
         {

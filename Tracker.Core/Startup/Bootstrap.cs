@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Web;
 using AutoMapper;
 using Examine;
 using Lucene.Net.Documents;
@@ -17,7 +14,7 @@ using Umbraco.Core;
 using Umbraco.Core.Services;
 using UmbracoExamine;
 
-namespace Tracker
+namespace Tracker.Core.Startup
 {
     public class Bootstrap : ApplicationEventHandler
     {
@@ -41,12 +38,9 @@ namespace Tracker
                     .For(ContentPage.ModelTypeAlias).MapTo<ContentPageViewModel>()
                     .For(Blog.ModelTypeAlias).MapTo<BlogPageViewModel>()
                     .For(Blogpost.ModelTypeAlias).MapTo<BlogPostPageViewModel>()
-            });
+                    .For(Products.ModelTypeAlias).MapTo<ProductsViewModel>()
+                    .For(Product.ModelTypeAlias).MapTo<ProductPageViewModel>()
 
-            HeadRest.ConfigureEndpoint("/about/",new HeadRestOptions
-            {
-                ViewModelMappings = new HeadRestViewModelMap()
-                .For(ContentPage.ModelTypeAlias).MapTo<ContentPageViewModel>()
             });
             // Configure default values
             ContentService.Created += (sender, args) =>

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tracker.Core.ViewModels
+﻿namespace Tracker.Core.ViewModels
 {
     public class BasePageViewModel
     {
@@ -16,10 +10,12 @@ namespace Tracker.Core.ViewModels
 
         public string Type { get; set; }
 
-        public string MetaTitle { get; set; }
+        public string PageTitle { get; set; }
 
-        public string MetaDescription { get; set; }
+        public string SeoMetaDescription { get; set; }
+        public string Keywords { get; set; }
 
         public string MetaKeywords { get; set; }
+        public bool UmbracoNavihide { get; set; }
     }
 }

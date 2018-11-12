@@ -34,6 +34,7 @@ C:\Development\Tracker-Backend\Tracker.Core\bin\Debug\Microsoft.Web.Infrastructu
 C:\Development\Tracker-Backend\Tracker.Core\bin\Debug\MiniProfiler.dll
 C:\Development\Tracker-Backend\Tracker.Core\bin\Debug\MySql.Data.dll
 C:\Development\Tracker-Backend\Tracker.Core\bin\Debug\Newtonsoft.Json.dll
+C:\Development\Tracker-Backend\Tracker.Core\bin\Debug\Our.Umbraco.Ditto.dll
 C:\Development\Tracker-Backend\Tracker.Core\bin\Debug\Our.Umbraco.HeadRest.dll
 C:\Development\Tracker-Backend\Tracker.Core\bin\Debug\Owin.dll
 C:\Development\Tracker-Backend\Tracker.Core\bin\Debug\Semver.dll
@@ -116,8 +117,8 @@ C:\Development\Tracker-Backend\Tracker.Core\bin\Debug\Umbraco.ModelsBuilder.pdb
 C:\Development\Tracker-Backend\Tracker.Core\bin\Debug\umbraco.providers.xml
 C:\Development\Tracker-Backend\Tracker.Core\bin\Debug\Umbraco.Web.UI.xml
 C:\Development\Tracker-Backend\Tracker.Core\bin\Debug\UmbracoExamine.xml
+C:\Development\Tracker-Backend\Tracker.Core\obj\Debug\Tracker.Core.csprojAssemblyReference.cache
 C:\Development\Tracker-Backend\Tracker.Core\obj\Debug\Tracker.Core.csproj.CoreCompileInputs.cache
 C:\Development\Tracker-Backend\Tracker.Core\obj\Debug\Tracker.Core.csproj.CopyComplete
 C:\Development\Tracker-Backend\Tracker.Core\obj\Debug\Tracker.Core.dll
 C:\Development\Tracker-Backend\Tracker.Core\obj\Debug\Tracker.Core.pdb
-C:\Development\Tracker-Backend\Tracker.Core\obj\Debug\Tracker.Core.csprojAssemblyReference.cache

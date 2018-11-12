@@ -130,6 +130,9 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Our.Umbraco.Ditto, Version=0.12.6843.25482, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Our.Umbraco.Ditto.0.12.1\lib\net45\Our.Umbraco.Ditto.dll</HintPath>
+    </Reference>
     <Reference Include="Our.Umbraco.HeadRest">
       <HintPath>..\Tracker\bin\Our.Umbraco.HeadRest.dll</HintPath>
     </Reference>
@@ -232,8 +235,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Resolvers\ProductListResolver.cs" />
+    <Compile Include="Resolvers\ProductsResolver.cs" />
+    <Compile Include="Startup\Bootstrap.cs" />
     <Compile Include="Constants\TrackerConstants.cs" />
-    <Compile Include="Extensions\Class1.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Mapping\ViewModelMappingProfile.cs" />
     <Compile Include="Models\Blog.generated.cs">
@@ -295,7 +300,6 @@
       <DependentUpon>Builder.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resolvers\Class1.cs" />
     <Compile Include="Resolvers\NavigationResolver.cs" />
     <Compile Include="Resolvers\PagniatedBlogPostsResolver.cs" />
     <Compile Include="ViewModels\BasePageViewModel.cs" />
@@ -306,7 +310,8 @@
     <Compile Include="ViewModels\ContentPageViewModel.cs" />
     <Compile Include="ViewModels\InitViewModel.cs" />
     <Compile Include="ViewModels\HomePageViewModel.cs" />
-    <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="ViewModels\ProductPageViewModel.cs" />
+    <Compile Include="ViewModels\ProductsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

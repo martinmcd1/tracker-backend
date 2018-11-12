@@ -1,9 +1,10 @@
 ﻿
+using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using Tracker.Core.Models;
 using Tracker.Core.Resolvers;
 using Tracker.Core.ViewModels;
-using Umbraco.Core;
 using Umbraco.Core.Models;
 
 namespace Tracker.Core.Mapping
@@ -31,10 +32,22 @@ namespace Tracker.Core.Mapping
                 .ForMember(x => x.Author, o => o.MapFrom(x => x.WriterName));
             Mapper.CreateMap<Blogpost, BlogPostPageViewModel>()
                 .IncludeBase<Blogpost, BaseBlogPostPageViewModel>();
-            ////Products
-            //Mapper.CreateMap<Products, ProductViewModel>()
-            //    .ForMember(x => x.Type, o => o.MapFrom(x => x.DocumentTypeAlias));
-        }
 
+            // Products
+            Mapper.CreateMap<Products, ProductsViewModel>()
+                .ForMember(x => x.Type, o => o.MapFrom(x => x.DocumentTypeAlias))
+                .ForMember(x => x.FeaturedProducts, o => o.ResolveUsing<ProductsResolver>())
+                .ForMember(x => x.ProductList, o => o.ResolveUsing<ProductListResolver>());
+            Mapper.CreateMap<PagedResult<Product>, PagedResult<BasePageViewModel>>();
+
+            // ProductPage
+            Mapper.CreateMap<Product, ProductPageViewModel>()
+                .ForMember(x => x.Type, o => o.MapFrom(x => x.DocumentTypeAlias))
+                .ForMember(x => x.Category, o => o.MapFrom(x => string.Join(",",x.Category)))
+                .ForMember(x => x.Photos, o => o.MapFrom(x => x.Photos.Select(y=>y.Url)));
+            Mapper.CreateMap<Product, ProductPageViewModel>()
+                .IncludeBase<Product, BasePageViewModel>();
+
+        }
     }
 }

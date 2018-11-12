@@ -9,7 +9,6 @@ namespace Tracker.Core.Models
     public class NavItem
     {
         public string PageName { get; set; }
-
         public string PageUrl { get; set; }
 
     }
